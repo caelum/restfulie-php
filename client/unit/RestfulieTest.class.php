@@ -2,6 +2,7 @@
 require_once 'PHPUnit/Framework.php';
 require_once '../lib/Restfulie.class.php';
 require_once '../lib/mediatypes/MediaTypeXML.class.php';
+require_once '../lib/mediatypes/MediaTypeJSON.class.php';
 require_once 'DummyRequest.class.php';
 
 class RestfulieTest extends PHPUnit_Framework_TestCase {
@@ -45,6 +46,10 @@ class RestfulieTest extends PHPUnit_Framework_TestCase {
   
   public function testJsonMediaTypeUmashal(){
     $mediatype = new MediaTypeJSON();
+    $body = "{\"item\":{\"name\":\"calpis\",\"price\":12.4}}";
+    $request = new DummyRequest(200,$body,null);
+    $resource = $mediatype->unmarshal($request);
+    $this->assertEquals($resource->item->name,"calpis");
   }
 }
 
