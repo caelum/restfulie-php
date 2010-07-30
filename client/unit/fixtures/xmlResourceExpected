@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+  <created-at type="datetime">2010-04-20T14:19:25Z</created-at>
+  <id type="integer">1</id>
+  <name>Calpis</name>
+  <price type="decimal">10.0</price>
+  <updated-at type="datetime">2010-04-20T14:19:25Z</updated-at>
+</item>

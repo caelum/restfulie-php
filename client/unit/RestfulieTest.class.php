@@ -3,7 +3,7 @@ require_once 'PHPUnit/Framework.php';
 require_once '../lib/Restfulie.class.php';
 require_once '../lib/mediatypes/MediaTypeXML.class.php';
 require_once '../lib/mediatypes/MediaTypeJSON.class.php';
-require_once 'DummyRequest.class.php';
+require_once 'helpers/DummyRequest.class.php';
 
 class RestfulieTest extends PHPUnit_Framework_TestCase {
 
@@ -67,7 +67,12 @@ class RestfulieTest extends PHPUnit_Framework_TestCase {
      $restfulie = Restfulie::at("http://localhost:3000/items/1");
      $restfulie->accepts("application/json");
      $resource = $restfulie->get();
-     $expected = "{\"item\":{\"price\":10.0,\"name\":\"Calpis\",\"created_at\":\"2010-04-20T14:19:25Z\",\"updated_at\":\"2010-04-20T14:19:25Z\",\"id\":1}}";
+     $expected = file_get_contents("fixtures/jsonResourceExpected");
+     $this->assertEquals(trim($resource->response->body),trim($expected));
+     
+     $restfulie->accepts("application/xml");
+     $resource = $restfulie->get();
+     $expected = file_get_contents("fixtures/xmlResourceExpected");
      $this->assertEquals($resource->response->body,$expected);
   }
 }
