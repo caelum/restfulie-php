@@ -13,6 +13,10 @@ class EntryPoint {
     return $this->request_a(HttpRequest::METH_GET);
   }
   
+  public function accepts($accept){
+    $this->headers['Accept'] = $accept;
+  }
+  
   private function request_a($method){
     $request = new HttpRequest($this->uri, $method);
     $request->setHeaders($this->headers);

@@ -63,7 +63,13 @@ class RestfulieTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals($json ,$expected_result);
   }
   
-  
+  public function testSupportMultipleContentTypeRequest(){
+     $restfulie = Restfulie::at("http://localhost:3000/items/1");
+     $restfulie->accepts("application/json");
+     $resource = $restfulie->get();
+     $expected = "{\"item\":{\"price\":10.0,\"name\":\"Calpis\",\"created_at\":\"2010-04-20T14:19:25Z\",\"updated_at\":\"2010-04-20T14:19:25Z\",\"id\":1}}";
+     $this->assertEquals($resource->response->body,$expected);
+  }
 }
 
 ?>
