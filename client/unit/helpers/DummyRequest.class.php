@@ -6,7 +6,7 @@ class DummyRequest {
   private $body;
   private $headers;
 
-  public function DummyRequest($code,$body,$headers){
+  public function DummyRequest($code,$body = null,$headers = null){
     $this->code = $code;
     $this->body = $body;
     $this->headers = $headers;
@@ -22,6 +22,10 @@ class DummyRequest {
 
   public function getResponseHeaders(){
     return $this->headers;
+  }
+  
+  public function getResponseHeader($header){
+    return $this->headers[$header];
   }
 
 }

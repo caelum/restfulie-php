@@ -28,13 +28,5 @@ class EntryPoint {
     $retorno->response->code = $request->getResponseCode();
     return $retorno;
   }
-  
 }
-/*
-
-
-// use for create dynamic data object
-class Dynamic {}
-*/
-
 ?>

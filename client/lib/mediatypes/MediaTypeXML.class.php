@@ -8,8 +8,11 @@
     }
     public function unmarshal($request){
       $content = $request->getResponseBody();
-      $xml = simplexml_load_string($content);
       $aux = new stdClass;
+
+      if ($content == null) return $aux;
+
+      $xml = simplexml_load_string($content);
       $cmd = "\$aux->{$xml->getName()} = \$xml;";
       eval($cmd);
       return json_decode(json_encode($aux));
