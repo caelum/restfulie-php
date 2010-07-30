@@ -60,7 +60,7 @@ class RestfulieTest extends PHPUnit_Framework_TestCase {
     $json = $mediatype->marshal($resource);
     $expected_result = $hash;
 
-    $this->assertEquals($json,$expected_result);
+    $this->assertEquals($json ,$expected_result);
   }
 }
 
