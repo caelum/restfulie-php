@@ -107,25 +107,18 @@ class RestfulieTest extends PHPUnit_Framework_TestCase {
 
     $this->assertEquals($resource->item->name,"Calpis");
   }
-  
+
   public function test_Should_follow_the_link_location_in_header_to_answer_201(){
     print("\nShould follow the link location in header to answer 201 ");
     
     $serializer = new RedirectSerializer(new DummyEntryPointFactory());
     $headers = array("Location"=>"http://localhost/newresource","Accept"=>"application/xml");
     $request = new DummyRequest(201,"",$headers);
-    $serializer->serializer(null,$request);
+    $resource = $serializer->serializer(null,$request);
     
+    $this->assertNotNull($resource);
   }
-  
-/*
-  public function testSerializerHttpRequest(){
-    $registred_mediatypes= array("application/json"=>new MediaTypeJSON(), "application/xml"=> new MediaTypeXML());
-    $serializer = new SerializerStrategy($registred_mediatypes);
-    $request = new DummyRequest(200,file_get_contents("fixtures/jsonResourceExpected"),array("Content-Type"=>"application/json"));
-    $resource = $serializer->serializer($request);
-    $this->assertEquals($resource->item->name,"Calpis");
-  }*/
+
 }
 
 ?>
