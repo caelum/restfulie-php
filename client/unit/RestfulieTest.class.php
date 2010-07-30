@@ -55,7 +55,7 @@ class RestfulieTest extends PHPUnit_Framework_TestCase {
   public function testJSONMediaTypeMashal(){
     $mediatype = new MediaTypeJSON();
     $hash = "{\"item\":{\"name\":\"calpis\",\"price\":12.4}}";
-    $resource = json_decode();
+    $resource = json_decode($hash);
 
     $json = $mediatype->marshal($resource);
     $expected_result = $hash;
