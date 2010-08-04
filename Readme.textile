@@ -6,14 +6,13 @@ Meanwhile visit "Restfulie's website":http://restfulie.caelumobjects.com
 
 h1. How to install
 
-To use the php version restfulie add the folder to your client project and 
-do require the file Restfulie.class.php.
+To use the php version restfulie add the folder to your client project and do require the file Restfulie.class.php.
 
 
 h2. A simple get
-
+<pre>
 $resource = Restfulie::at(url)->accepts('application/json')->get();
-
+</pre>
 h2. A simple post
 
 <pre>	
