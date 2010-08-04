@@ -8,11 +8,14 @@ h1. How to install
 
 To use the php version restfulie add the folder to your client project and do require the file Restfulie.class.php.
 
+To run the tests install phpunit, php and enable the library HttpRequest in php.ini.
 
 h2. A simple get
+
 <pre>
 $resource = Restfulie::at(url)->accepts('application/json')->get();
 </pre>
+
 h2. A simple post
 
 <pre>	
