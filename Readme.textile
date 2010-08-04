@@ -1,6 +1,6 @@
-h1. Restfulie Javascript
+h1. Restfulie PHP
 
-Restfulie javascript port is in its earlier stages. Wait a while for some extra information and docs.
+Restfulie PHP port is in its earlier stages. Wait a while for some extra information and docs.
 
 Meanwhile visit "Restfulie's website":http://restfulie.caelumobjects.com
 
