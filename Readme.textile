@@ -1,0 +1,46 @@
+h1. Restfulie Javascript
+
+Restfulie javascript port is in its earlier stages. Wait a while for some extra information and docs.
+
+Meanwhile visit "Restfulie's website":http://restfulie.caelumobjects.com
+
+h1. How to install
+to use the php version restfulie add the folder to your client project and 
+do require the file Restfulie.class.php.
+
+
+h2. A simple get
+
+$resource = Restfulie::at(url)->accepts('application/json')->get();
+
+h2. A simple post
+
+<pre>	
+	$x = new stdClass;
+	$x->price = 11;
+ 	$result = Restfulie::at(url)->asFor("application/json")->post($x);
+</pre>
+
+h2. Checking the result
+
+<pre>
+$resource = Restfulie::at(url)->accepts('application/json')->get();
+$resource = Restfulie::at(url)->asFor('application/json')->post($resource);
+
+print($resource->response->body);
+print($resource->response->code) 
+</pre>
+
+h1. Team
+
+Restfulie Javascript was created by "Carlos Alberto":http://progdicas.blogspot.com and has received contributions from:
+
+"Guilherme Silveira":http://restfulie.caelumobjects.com (Restfulie project leader)
+
+h2. More info
+
+Do not forget "to visit the official website":http://restfulie.caelumobjects.com for videos and other versions.
+
+h1. License
+
+Restfulie is licensed under the Apache License, Version 2.0.
