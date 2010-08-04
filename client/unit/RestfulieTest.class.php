@@ -49,13 +49,15 @@ class RestfulieTest extends PHPUnit_Framework_TestCase {
 	}
 
 	public function test_Should_support_posting_resources(){
-		print("\n  Should support posting resources");
+		print("\n  Should support posting resources ");
 		$resource = Restfulie::at("http://localhost:3000/items/1")->get();
 		$resource->item->name = 'new resource';
 		$posted_resource = Restfulie::at("http://localhost:3000/items")->post($resource);
+		
 		$this->assertNotEquals($posted_resource->item->id,$resource->item->id);
 		$this->assertEquals($posted_resource->response->code,200);
 	}
+	
+	
 }
-
 ?>

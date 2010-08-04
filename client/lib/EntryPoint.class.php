@@ -15,6 +15,10 @@ class EntryPoint {
 		return $this->request_a(HttpRequest::METH_GET);
 	}
 
+	public function delete(){
+		return $this->request_a(HttpRequest::METH_DELETE);
+	}
+	
 	public function post($resource){
 		return $this->request_a_payload($resource,HttpRequest::METH_POST);
 	}
