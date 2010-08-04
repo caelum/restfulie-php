@@ -36,7 +36,7 @@ print($resource->response->code)
 
 h1. Team
 
-Restfulie Javascript was created by "Carlos Alberto":http://progdicas.blogspot.com and has received contributions from:
+Restfulie PHP was created by "Carlos Alberto":http://progdicas.blogspot.com and has received contributions from:
 
 "Guilherme Silveira":http://restfulie.caelumobjects.com (Restfulie project leader)
 
