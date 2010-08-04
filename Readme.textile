@@ -5,7 +5,8 @@ Restfulie PHP port is in its earlier stages. Wait a while for some extra informa
 Meanwhile visit "Restfulie's website":http://restfulie.caelumobjects.com
 
 h1. How to install
-to use the php version restfulie add the folder to your client project and 
+
+To use the php version restfulie add the folder to your client project and 
 do require the file Restfulie.class.php.
 
 
